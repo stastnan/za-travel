@@ -1,17 +1,20 @@
 import { Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@features/ui/AuthLayout";
-import { Home, Login } from "@mui/icons-material";
+import Home from "@pages/home";
+import Login from "@pages/login";
 import NotFoundPage from "@pages/not-found";
-import SignUpPage from "@pages/sign-up";
+import SignUp from "@pages/sign-up";
+
+import { AppRoutes } from "./AppRoutes";
 
 function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path={AppRoutes.home} element={<Home />} />
       <Route element={<AuthLayout />}>
-        <Route path="/sign-up" element={<SignUpPage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path={AppRoutes.signUp} element={<SignUp />} />
+        <Route path={AppRoutes.login} element={<Login />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
