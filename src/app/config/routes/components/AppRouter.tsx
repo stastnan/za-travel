@@ -18,7 +18,6 @@ function AppRouter() {
   return (
     <Routes>
       {/* Public Pages */}
-
       <Route path={AppRoutes.landingPage} element={<LandingPage />} />
 
       <Route path={AppRoutes.home} element={<HomePage />} />
