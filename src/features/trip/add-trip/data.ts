@@ -1,4 +1,4 @@
-import TravelInfo from "./components/Steps/Travelinfo";
+import TravelInfo from "./components/Steps/TravelInfo";
 import { WizardSteps } from "./types";
 
 export const WIZARD_STEPS: WizardSteps[] = [

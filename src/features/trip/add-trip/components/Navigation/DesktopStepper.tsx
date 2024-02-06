@@ -15,7 +15,7 @@ export default function DesktopStepper({ currentStep, steps }: Props) {
     <Stepper
       activeStep={currentStep}
       alternativeLabel={!xl}
-      sx={{ mb: 8, display: { xs: "none", lg: "flex" } }}
+      sx={{ mb: 8, display: { xs: "none", lg: "flex" }, ml: -1 }}
     >
       {steps.map(({ title }) => (
         <Step key={title}>

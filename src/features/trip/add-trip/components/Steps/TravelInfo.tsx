@@ -46,7 +46,7 @@ export default function TravelInfo() {
             Preview image
           </Typography>
         </ButtonBase>
-        <Stack sx={{ width: "100%" }}>
+        <Stack sx={{ width: "100%" }} gap={3}>
           <Controller
             name="name"
             control={control}
