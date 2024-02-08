@@ -78,7 +78,15 @@ export default function AccountLayout() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+        bgcolor: "grey.100",
+        minHeight: { md: "100vh" },
+        height: { xs: "100vh", md: "auto" },
+        maxHeight: { xs: "-webkit-fill-available", md: "auto" },
+      }}
+    >
       {/* Desktop drawer */}
       {md && (
         <>
@@ -160,9 +168,6 @@ export default function AccountLayout() {
             md: 4,
           },
           pb: 4,
-          bgcolor: "grey.100",
-          minHeight: "100vh",
-          height: "auto",
         }}
       >
         <Toolbar sx={{ display: { md: "none" }, ...TOOLBAR_STYLES }} />
