@@ -74,8 +74,15 @@ const theme = createTheme({
             color: Colors.secondaryBlue,
           },
         },
+
+        text: {
+          fontFamily: FontFamilies.poppins,
+          fontWeight: FontWeights.regular,
+          fontSize: "0.5rem",
+        },
       },
     },
+
     MuiStepLabel: {
       styleOverrides: {
         root: {
