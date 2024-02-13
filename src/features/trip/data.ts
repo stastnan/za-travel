@@ -1,8 +1,8 @@
-import PreviewImage1 from "./assets/preview_1.jpg";
-import PreviewImage2 from "./assets/preview_2.jpg";
-import PreviewImage3 from "./assets/preview_3.jpg";
-import PreviewImage4 from "./assets/preview_4.jpg";
-import PreviewImage5 from "./assets/preview_5.jpg";
+import PreviewImage1 from "./assets/preview_1.png";
+import PreviewImage2 from "./assets/preview_2.png";
+import PreviewImage3 from "./assets/preview_3.png";
+import PreviewImage4 from "./assets/preview_4.png";
+import PreviewImage5 from "./assets/preview_5.png";
 
 export interface TripPreviewImage {
   id: string;
