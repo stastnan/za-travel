@@ -1,9 +1,13 @@
-import { Box, Typography } from "@mui/material";
+import { Box, SxProps, Theme, Typography } from "@mui/material";
 
 import { APP_NAME } from "@config/constants";
+import { FontWeights } from "@config/styles/FontWeights";
 
 interface Props {
   isMinimized?: boolean;
+  sx: SxProps<Theme>;
+  isLanding?: boolean;
+  isCentered?: boolean;
 }
 
 function LogoIcon() {
@@ -24,20 +28,26 @@ function LogoIcon() {
   );
 }
 
-function Logo({ isMinimized }: Props) {
+function Logo({ isMinimized, sx, isLanding, isCentered }: Props) {
   return (
     <Box
       sx={{
+        ...sx,
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         height: 60,
-        width: "100%",
+        width: !isCentered ? "100%" : "fit-content",
         gap: 2.5,
       }}
     >
       <LogoIcon />
-      {!isMinimized && <Typography variant="h4">{APP_NAME}</Typography>}
+      {!isMinimized && (
+        <Typography
+          variant="h4"
+          fontWeight={isLanding ? FontWeights.semibold : ""}
+        >
+          {APP_NAME}
+        </Typography>
+      )}
     </Box>
   );
 }

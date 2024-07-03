@@ -1,5 +1,5 @@
 {
-  "name": "za-travel",
+  "name": "happy-travel",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "2.0.1",
     "dayjs": "1.11.10",
     "firebase": "10.7.1",
+    "framer-motion": "11.2.12",
     "notistack": "3.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

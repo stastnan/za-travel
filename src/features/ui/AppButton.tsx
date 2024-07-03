@@ -1,5 +1,10 @@
 import { LoadingButton } from "@mui/lab";
-import { type SxProps, type Theme, Typography } from "@mui/material";
+import {
+  type SxProps,
+  type Theme,
+  Typography,
+  TypographyProps,
+} from "@mui/material";
 
 interface Props {
   type?: "button" | "submit" | "reset";
@@ -13,6 +18,7 @@ interface Props {
   endIcon?: React.ReactNode;
   startIcon?: React.ReactNode;
   onClick?: () => void;
+  typography?: TypographyProps["variant"];
 }
 
 export default function AppButton({
@@ -26,6 +32,7 @@ export default function AppButton({
   href,
   endIcon,
   startIcon,
+  typography,
   onClick,
 }: Props) {
   return (
@@ -50,7 +57,7 @@ export default function AppButton({
         ...sx,
       }}
     >
-      <Typography component="span" variant="body2">
+      <Typography component="span" variant={typography || "body2"}>
         {children}
       </Typography>
     </LoadingButton>
