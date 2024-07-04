@@ -1,20 +1,28 @@
 import { Stack, Typography } from "@mui/material";
 
+import { useBreakpoints } from "@hooks/useBreakpoints";
+
+import MobilePlaneBackground from "../assets/MobilePlaneBackground.jpg";
 import PlaneBackground from "../assets/PlaneBackground.jpg";
 import PlanTripButton from "./PlanTripButton";
 
 function PlanNextTrip() {
+  const { sm } = useBreakpoints();
   return (
     <Stack
       sx={{
         alignItems: "center",
         justifyContent: "center",
-        backgroundImage: `url(${PlaneBackground})`,
+        backgroundImage: sm
+          ? `url(${PlaneBackground})`
+          : `url(${MobilePlaneBackground})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         width: "100%",
         height: "384px",
         gap: 4,
+        px: { xs: 2, md: 0 },
+        py: { xs: 4, md: 0 },
       }}
     >
       <Typography
@@ -24,11 +32,12 @@ function PlanNextTrip() {
           fontSize: "3.125rem",
           lineHeight: "3,437rem",
           zIndex: 10,
+          textAlign: "center",
         }}
       >
         Let's plan your next trip together?
       </Typography>
-      <PlanTripButton sx={{ width: "16.25rem" }} />
+      <PlanTripButton sx={{ width: { xs: "100%", md: "16.25rem" } }} />
     </Stack>
   );
 }

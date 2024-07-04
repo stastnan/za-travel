@@ -3,19 +3,22 @@ import { Stack } from "@mui/material";
 import { AppRoutes } from "@config/routes";
 import AppButton from "@features/ui/AppButton";
 import Logo from "@features/ui/logo/Logo";
+import { useBreakpoints } from "@hooks/useBreakpoints";
 
 import { HEADER_HEIGHT_PX } from "../constants";
 
 function Header() {
+  const { md } = useBreakpoints();
   return (
     <Stack
       sx={{
         width: "100%",
-        height: HEADER_HEIGHT_PX,
+        height: { xs: "auto", md: HEADER_HEIGHT_PX },
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: "row",
-        px: 12.5,
+        px: { xs: 2, md: 12.5 },
+        py: { xs: 1, md: 0 },
       }}
     >
       <Logo
@@ -28,7 +31,7 @@ function Header() {
       <Stack
         sx={{
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: { xs: "flex-end", md: "space-between" },
           alignItems: "center",
           width: "12.125rem",
 
@@ -49,19 +52,21 @@ function Header() {
         >
           Log in
         </AppButton>
-        <AppButton
-          href={AppRoutes.signUp}
-          typography="subtitle2"
-          sx={{
-            height: "3rem",
-            minWidth: "5.88rem",
-            textAlign: "center",
-            py: 2,
-            px: 1,
-          }}
-        >
-          Sign up
-        </AppButton>
+        {md && (
+          <AppButton
+            href={AppRoutes.signUp}
+            typography="subtitle2"
+            sx={{
+              height: "3rem",
+              minWidth: "5.88rem",
+              textAlign: "center",
+              py: 2,
+              px: 1,
+            }}
+          >
+            Sign up
+          </AppButton>
+        )}
       </Stack>
     </Stack>
   );

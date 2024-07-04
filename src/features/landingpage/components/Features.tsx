@@ -4,9 +4,12 @@ import { APP_NAME } from "@config/constants";
 import { Colors } from "@config/styles";
 import { FontFamilies } from "@config/styles/FontFamilies";
 import { FontWeights } from "@config/styles/FontWeights";
+import { useBreakpoints } from "@hooks/useBreakpoints";
 
-import DesktopTrips from "../assets/DesktopTrips.jpg";
-import DesktopExpenses from "../assets/ExpensesDesktop.jpg";
+import DesktopDashboard from "../assets/DesktopDashboard.jpg";
+import DesktopExpenses from "../assets/DesktopExpenses.jpg";
+import MobileDashboard from "../assets/MobileDashboard.jpg";
+import MobileExpenses from "../assets/MobileExpenses.jpg";
 import AppShowcaseText from "./FeaturesText";
 
 const imgStyles = {
@@ -26,11 +29,16 @@ interface Props {
 }
 
 export default function Features({ contentRef }: Props) {
+  const { md } = useBreakpoints();
   return (
     <Stack
-      sx={{ mx: 12.5, mt: 9.5, pb: 20.125 }}
-      alignItems="center"
+      sx={{
+        mt: { xs: 8.75, md: 9.5 },
+        pb: { xs: 6, md: 20.125 },
+        px: { xs: 2, md: 12.5 },
+      }}
       ref={contentRef}
+      alignItems="center"
     >
       <Typography
         variant="h6"
@@ -43,8 +51,8 @@ export default function Features({ contentRef }: Props) {
         sx={{
           fontFamily: FontFamilies.poppins,
           fontWeight: FontWeights.semibold,
-          fontSize: "2.5rem",
-          lineHeight: "4.375rem",
+          fontSize: { xs: "1.625rem", md: "2.5rem" },
+          lineHeight: { xs: "2.25rem", md: "4.375rem" },
           textAlign: "center",
         }}
       >
@@ -52,26 +60,37 @@ export default function Features({ contentRef }: Props) {
       </Typography>
 
       <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        mt={8}
-        pb={9}
-        width="100%"
         flex={1}
-        sx={{ borderBottom: `1px solid ${Colors.lightGrey}` }}
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: { md: "space-between" },
+          alignItems: { xs: "center", md: "space-between" },
+          pb: { xs: 4, md: 9 },
+          width: "100%",
+          borderBottom: `1px solid ${Colors.lightGrey}`,
+          mt: { xs: 4, md: 8 },
+        }}
       >
         <Box
           component="img"
-          src={DesktopTrips}
+          src={md ? DesktopDashboard : MobileDashboard}
           alt="App's trip planning screen"
           sx={{
             ...imgStyles,
-
-            mr: 3,
+            mb: { xs: 3, md: 0 },
+            mr: { xs: 0, md: 3 },
+            width: "100%",
           }}
         />
-        <Stack alignItems="flex-start" justifyContent="center" maxWidth="650px">
+        <Stack
+          alignItems="space-between"
+          sx={{
+            justifyContent: {
+              xs: "space-between",
+              md: "space-between",
+            },
+          }}
+        >
           <AppShowcaseText
             part="DASHBOARD"
             title="Organize All Your Trips in a Single Application"
@@ -86,14 +105,22 @@ export default function Features({ contentRef }: Props) {
       </Stack>
 
       <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        mt={9}
-        width="100%"
         flex={1}
+        sx={{
+          flexDirection: { xs: "column-reverse", md: "row" },
+          alignItems: "center",
+          justifyContent: { md: "space-between" },
+          pb: { xs: 4, md: 9 },
+          width: "100%",
+          borderBottom: `1px solid ${Colors.lightGrey}`,
+          mt: { xs: 4, md: 8 },
+        }}
       >
-        <Stack alignItems="flex-start" justifyContent="center" maxWidth="650px">
+        <Stack
+          alignItems="flex-start"
+          justifyContent="center"
+          sx={{ mt: { xs: 3, md: 9 }, width: { xs: "100%", md: "auto" } }}
+        >
           <AppShowcaseText
             part="EXPENSES"
             title="Expense Tracking for Your Travels"
@@ -102,12 +129,13 @@ export default function Features({ contentRef }: Props) {
         </Stack>
         <Box
           component="img"
-          src={DesktopExpenses}
+          src={md ? DesktopExpenses : MobileExpenses}
           alt="App's expenses screen"
           sx={{
             ...imgStyles,
             mr: 0,
-            ml: 3,
+            ml: { xs: 0, md: 3 },
+            width: "100%",
           }}
         />
       </Stack>

@@ -2,6 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import { Box, SxProps, Theme } from "@mui/material";
 
 import { Colors } from "@config/styles";
+import { useBreakpoints } from "@hooks/useBreakpoints";
 
 import Avatar1 from "../assets/Avatar1.png";
 import Avatar2 from "../assets/Avatar2.png";
@@ -21,8 +22,8 @@ function Avatar({ src, sx, alt }: AvatarProps) {
       src={src}
       alt={alt}
       sx={{
-        width: "55px",
-        height: "55px",
+        maxWidth: { xs: "52px", md: "55px" },
+        height: { xs: "50px", md: "55px" },
         borderRadius: "50%",
         border: `1px solid ${Colors.white}`,
         position: "absolute",
@@ -32,62 +33,97 @@ function Avatar({ src, sx, alt }: AvatarProps) {
   );
 }
 
-interface Props {
-  bigScreen?: boolean;
-}
-
-export default function Users({ bigScreen }: Props) {
+export default function Users() {
+  const { md } = useBreakpoints();
   return (
     <Stack
       direction="row"
       sx={{
-        mt: bigScreen ? { xl: 20, lg: 15 } : 5,
-        mx: bigScreen ? 0 : 12.5,
-        py: 3,
+        mt: { xs: 5, lg: 15, xl: 20 },
+        py: { xs: 2, md: 3 },
         px: "auto",
-        justifyContent: bigScreen ? "flex-start" : "center",
-        alignItems: "center",
+        justifyContent: { md: "flex-start", xs: "flex-start" },
+        alignItems: { xs: "flex-start", md: "center" },
         borderTop: `1px solid ${Colors.lightGrey}`,
         borderBottom: `1px solid ${Colors.lightGrey}`,
-        gap: 10,
+        gap: { xs: 10, md: 2 },
+        width: { xs: "100%", md: "auto" },
       }}
     >
-      <Typography variant="h2">1200+ users</Typography>
       <Stack
         sx={{
-          position: "relative",
-          width: "10.5rem",
-          height: "3.44rem",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: { xs: "space-between", md: "flex-start" },
+          alignItems: { xs: "space-between", md: "" },
+          width: { xs: "100%", md: "auto" },
+          gap: { xs: 1, md: 2 },
+          px: { xs: 0, sm: 15, md: 0 },
         }}
       >
-        <Avatar
-          src={Avatar1}
-          alt="User's profile picture"
-          sx={{ left: "0%", zIndex: 10 }}
-        />
-        <Avatar
-          src={Avatar2}
-          alt="User's profile picture"
-          sx={{ left: "22%", zIndex: 11 }}
-        />
-        <Avatar
-          src={Avatar3}
-          alt="User's profile picture"
-          sx={{ left: "44%", zIndex: 12 }}
-        />
-        <Avatar
-          src={Avatar4}
-          alt="User's profile picture"
-          sx={{ left: "66%", zIndex: 13 }}
-        />
+        <Stack
+          sx={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: { xs: 1, md: 2 },
+            width: { sx: "100%", md: "90%", lg: "80%" },
+          }}
+        >
+          <Typography variant="h2" sx={{ mb: { xs: 1, md: 0 } }}>
+            1200+ users
+          </Typography>
+
+          <Stack
+            sx={{
+              position: "relative",
+              width: "10.5rem",
+
+              height: "3.44rem",
+            }}
+          >
+            <Avatar
+              src={Avatar1}
+              alt="User's profile picture"
+              sx={{ left: "0%", zIndex: 10 }}
+            />
+            <Avatar
+              src={Avatar2}
+              alt="User's profile picture"
+              sx={{ left: "22%", zIndex: 11 }}
+            />
+            <Avatar
+              src={Avatar3}
+              alt="User's profile picture"
+              sx={{ left: "44%", zIndex: 12 }}
+            />
+            <Avatar
+              src={Avatar4}
+              alt="User's profile picture"
+              sx={{ left: "66%", zIndex: 13 }}
+            />
+          </Stack>
+        </Stack>
+        {!md && (
+          <Typography
+            variant="subtitle1"
+            sx={{ color: (theme) => theme.palette.text.secondary }}
+          >
+            Track their trips in our App.
+          </Typography>
+        )}
       </Stack>
-      <Typography
-        variant="subtitle1"
-        sx={{ color: (theme) => theme.palette.text.secondary }}
-      >
-        Track their trips in
-        <br /> our App.
-      </Typography>
+      {md && (
+        <Typography
+          variant="subtitle1"
+          sx={{
+            color: (theme) => theme.palette.text.secondary,
+            minWidth: "25%",
+          }}
+        >
+          Track their trips in
+          <br /> our App.
+        </Typography>
+      )}
     </Stack>
   );
 }

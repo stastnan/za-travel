@@ -1,5 +1,6 @@
 export const Colors = {
   disabled: "#89999B",
+  shadowGrey: "#b8b6b8",
   primaryGreen: "#729E65",
   secondaryGreen: "rgba(114, 158, 101, 0.17)",
   lightGreen: "#ECF2E3",

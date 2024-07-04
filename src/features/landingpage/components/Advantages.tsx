@@ -3,30 +3,38 @@ import FolderOpenOutlinedIcon from "@mui/icons-material/FolderOpenOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Stack, Typography } from "@mui/material";
 
+import { FontFamilies } from "@config/styles/FontFamilies";
 import { FontWeights } from "@config/styles/FontWeights";
 
 import AdvantagesCard from "./AdvantagesCard";
 
 function Advantages() {
   return (
-    <Stack justifyContent="center" alignItems="center" pb={18}>
+    <Stack
+      justifyContent="center"
+      alignItems="center"
+      sx={{ pb: { xs: 4.125, md: 18 } }}
+    >
       <Typography variant="h6" color={(theme) => theme.palette.primary.main}>
         ADVANTAGES
       </Typography>
       <Typography
-        variant="h2"
         sx={{
-          fontSize: "2.187rem",
-          lineHeight: "3.125rem",
-          mt: 1,
-          mb: 3,
+          fontFamily: FontFamilies.poppins,
           fontWeight: FontWeights.semibold,
+          fontSize: { xs: "1.625rem", md: "2.5rem" },
+          lineHeight: { xs: "4.375rem", md: "4.375rem" },
+          textAlign: "center",
+          mb: { xs: 1, md: 0 },
         }}
       >
         Why choose us?
       </Typography>
       <Stack
-        direction="row"
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: 3, md: 0 },
+        }}
         justifyContent="space-between"
         textAlign="center"
         maxWidth="1506px"
