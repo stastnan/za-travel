@@ -6,6 +6,8 @@ import {
   TypographyProps,
 } from "@mui/material";
 
+import { theme } from "@config/styles";
+
 interface Props {
   type?: "button" | "submit" | "reset";
   variant?: "text" | "contained" | "outlined";
@@ -19,6 +21,7 @@ interface Props {
   startIcon?: React.ReactNode;
   onClick?: () => void;
   typography?: TypographyProps["variant"];
+  isLanding?: boolean;
 }
 
 export default function AppButton({
@@ -34,6 +37,7 @@ export default function AppButton({
   startIcon,
   typography,
   onClick,
+  isLanding,
 }: Props) {
   return (
     <LoadingButton
@@ -57,7 +61,18 @@ export default function AppButton({
         ...sx,
       }}
     >
-      <Typography component="span" variant={typography || "body2"}>
+      <Typography
+        component="span"
+        variant={typography || "body2"}
+        sx={{
+          ...(isLanding && {
+            [theme.breakpoints.down("md")]: {
+              fontSize: "1.125rem",
+              lineHeight: "1.688rem",
+            },
+          }),
+        }}
+      >
         {children}
       </Typography>
     </LoadingButton>

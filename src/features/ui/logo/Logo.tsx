@@ -1,6 +1,7 @@
 import { Box, SxProps, Theme, Typography } from "@mui/material";
 
 import { APP_NAME } from "@config/constants";
+import { theme } from "@config/styles";
 import { FontWeights } from "@config/styles/FontWeights";
 
 interface Props {
@@ -8,13 +9,19 @@ interface Props {
   sx: SxProps<Theme>;
   isLanding?: boolean;
   isCentered?: boolean;
+  isSmallIcon?: boolean;
+  isFooter?: boolean;
 }
 
-function LogoIcon() {
+interface IconProps {
+  isSmallIcon?: boolean;
+}
+
+function LogoIcon({ isSmallIcon }: IconProps) {
   return (
     <svg
-      width="46"
-      height="46"
+      width={isSmallIcon ? "34" : "46"}
+      height={isSmallIcon ? "34" : "46"}
       viewBox="0 0 46 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,22 +35,41 @@ function LogoIcon() {
   );
 }
 
-function Logo({ isMinimized, sx, isLanding, isCentered }: Props) {
+function Logo({
+  isMinimized,
+  sx,
+  isLanding,
+  isCentered,
+  isSmallIcon,
+  isFooter,
+}: Props) {
   return (
     <Box
       sx={{
         ...sx,
         display: "flex",
+        alignItems: "center",
         height: 60,
         width: !isCentered ? "100%" : "fit-content",
         gap: 2.5,
       }}
     >
-      <LogoIcon />
+      <LogoIcon isSmallIcon={isSmallIcon} />
       {!isMinimized && (
         <Typography
           variant="h4"
           fontWeight={isLanding ? FontWeights.semibold : ""}
+          sx={{
+            [theme.breakpoints.down("md")]: isFooter
+              ? {
+                  fontSize: "1.562rem",
+                  lineHeight: "2.25rem",
+                }
+              : {
+                  fontSize: "1.25rem",
+                  lineHeight: "1.875rem",
+                },
+          }}
         >
           {APP_NAME}
         </Typography>

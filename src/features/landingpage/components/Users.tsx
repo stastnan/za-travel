@@ -42,12 +42,13 @@ export default function Users() {
         mt: { xs: 5, lg: 15, xl: 20 },
         py: { xs: 2, md: 3 },
         px: "auto",
-        justifyContent: { md: "flex-start", xs: "flex-start" },
+        justifyContent: { xs: "flex-start", md: "flex-start" },
         alignItems: { xs: "flex-start", md: "center" },
         borderTop: `1px solid ${Colors.lightGrey}`,
         borderBottom: `1px solid ${Colors.lightGrey}`,
         gap: { xs: 10, md: 2 },
         width: { xs: "100%", md: "auto" },
+        maxHeight: { xs: "106px", md: "auto" },
       }}
     >
       <Stack
@@ -56,7 +57,7 @@ export default function Users() {
           justifyContent: { xs: "space-between", md: "flex-start" },
           alignItems: { xs: "space-between", md: "" },
           width: { xs: "100%", md: "auto" },
-          gap: { xs: 1, md: 2 },
+          gap: { xs: 0, md: 2 },
           px: { xs: 0, sm: 15, md: 0 },
         }}
       >
@@ -64,12 +65,13 @@ export default function Users() {
           sx={{
             flexDirection: "row",
             justifyContent: "space-between",
-            alignItems: "center",
-            gap: { xs: 1, md: 2 },
-            width: { sx: "100%", md: "90%", lg: "80%" },
+            alignItems: { xs: "center", md: "center" },
+            gap: { xs: 0, md: 2 },
+            width: { xs: "100%", md: "90%", lg: "80%" },
+            maxHeight: { xs: "50px", md: "auto" },
           }}
         >
-          <Typography variant="h2" sx={{ mb: { xs: 1, md: 0 } }}>
+          <Typography variant="h2" sx={{ minWidth: { md: "179px" } }}>
             1200+ users
           </Typography>
 
@@ -84,22 +86,22 @@ export default function Users() {
             <Avatar
               src={Avatar1}
               alt="User's profile picture"
-              sx={{ left: "0%", zIndex: 10 }}
+              sx={{ left: "0%" }}
             />
             <Avatar
               src={Avatar2}
               alt="User's profile picture"
-              sx={{ left: "22%", zIndex: 11 }}
+              sx={{ left: "22%" }}
             />
             <Avatar
               src={Avatar3}
               alt="User's profile picture"
-              sx={{ left: "44%", zIndex: 12 }}
+              sx={{ left: "44%" }}
             />
             <Avatar
               src={Avatar4}
               alt="User's profile picture"
-              sx={{ left: "66%", zIndex: 13 }}
+              sx={{ left: "66%" }}
             />
           </Stack>
         </Stack>

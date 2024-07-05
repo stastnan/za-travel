@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 
+import { theme } from "@config/styles";
 import { useBreakpoints } from "@hooks/useBreakpoints";
 
 import MobilePlaneBackground from "../assets/MobilePlaneBackground.jpg";
@@ -30,7 +31,11 @@ function PlanNextTrip() {
         sx={{
           color: (theme) => theme.palette.primary.main,
           fontSize: "3.125rem",
-          lineHeight: "3,437rem",
+          lineHeight: "3.437rem",
+          [theme.breakpoints.down("md")]: {
+            fontSize: "1.875rem",
+            lineHeight: "2.812rem",
+          },
           zIndex: 10,
           textAlign: "center",
         }}

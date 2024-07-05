@@ -19,12 +19,12 @@ function Footer() {
       sx={{
         maxWidth: "1920px",
         mx: "auto",
-        py: 3,
+        pt: 3,
         textAlign: "center",
-        pb: 3,
+        pb: { xs: 3, md: 0 },
       }}
     >
-      <Logo isCentered sx={{ mb: 2, width: "190px" }} />
+      <Logo isCentered sx={{ mb: 2, width: "190px" }} isLanding isFooter />
       <Typography
         variant={md ? "body1" : "h6"}
         component="span"
@@ -34,7 +34,7 @@ function Footer() {
         Get in touch
       </Typography>
       <Typography
-        variant="body1"
+        variant="subtitle1"
         component="span"
         color={(theme) => theme.palette.text.secondary}
         mb={4}
@@ -44,11 +44,12 @@ function Footer() {
       <Typography
         variant={md ? "body1" : "h6"}
         component="span"
-        sx={{ fontWeight: FontWeights.regular, mb: { xs: 1, md: 0.5 } }}
+        sx={{ mb: { xs: 0, md: 1 } }}
+        fontWeight={FontWeights.regular}
       >
         contact@<b>happytravel</b>.com
       </Typography>
-      <Stack direction="row" sx={{ gap: 1, mt: 2 }}>
+      <Stack direction="row" sx={{ gap: 1, mt: { xs: 1, md: 0 } }}>
         <IconBox
           isSocialMedia
           icon={<InstagramIcon sx={{ width: "19px" }} />}

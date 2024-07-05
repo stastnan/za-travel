@@ -15,20 +15,20 @@ function IconBox({ icon, isSocialMedia }: Props) {
       sx={{
         gap: { xs: 2, md: 0 },
         bgcolor: !isSocialMedia ? Colors.primaryBlue : Colors.secondaryGreen,
-        maxWidth: !isSocialMedia ? "64px" : "32px",
-        maxHeight: !isSocialMedia ? "64px" : "32px",
+        width: !isSocialMedia ? "64px" : "32px",
+        height: !isSocialMedia ? "64px" : "32px",
         aspectRatio: 1 / 1,
-        borderRadius: 2,
+        borderRadius: !isSocialMedia ? 2 : 1,
         p: 2,
-        mb: 2,
+        mb: { xs: isSocialMedia ? 0 : 2, md: 4 },
         WebkitBoxShadow: !isSocialMedia
-          ? `-9px 10px 21px -4px ${Colors.shadowGrey}`
+          ? `10px 10px 16px 0px ${Colors.shadowGrey}`
           : "none",
         MozBoxShadow: !isSocialMedia
-          ? `-9px 10px 21px -4px ${Colors.shadowGrey}`
+          ? `10px 10px 16px 0px ${Colors.shadowGrey}`
           : "none",
         boxShadow: !isSocialMedia
-          ? `-9px 10px 21px -4px ${Colors.shadowGrey}`
+          ? `10px 10px 16px 0px ${Colors.shadowGrey}`
           : "none",
       }}
     >

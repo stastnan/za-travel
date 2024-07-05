@@ -10,7 +10,7 @@ import DesktopDashboard from "../assets/DesktopDashboard.jpg";
 import DesktopExpenses from "../assets/DesktopExpenses.jpg";
 import MobileDashboard from "../assets/MobileDashboard.jpg";
 import MobileExpenses from "../assets/MobileExpenses.jpg";
-import AppShowcaseText from "./FeaturesText";
+import FeaturesText from "./FeaturesText";
 
 const imgStyles = {
   borderRadius: 2.5,
@@ -33,7 +33,7 @@ export default function Features({ contentRef }: Props) {
   return (
     <Stack
       sx={{
-        mt: { xs: 8.75, md: 9.5 },
+        mt: { xs: 8.5, md: 9 },
         pb: { xs: 6, md: 20.125 },
         px: { xs: 2, md: 12.5 },
       }}
@@ -64,7 +64,7 @@ export default function Features({ contentRef }: Props) {
         sx={{
           flexDirection: { xs: "column", md: "row" },
           justifyContent: { md: "space-between" },
-          alignItems: { xs: "center", md: "space-between" },
+          alignItems: { xs: "center", md: "center" },
           pb: { xs: 4, md: 9 },
           width: "100%",
           borderBottom: `1px solid ${Colors.lightGrey}`,
@@ -82,51 +82,37 @@ export default function Features({ contentRef }: Props) {
             width: "100%",
           }}
         />
-        <Stack
-          alignItems="space-between"
-          sx={{
-            justifyContent: {
-              xs: "space-between",
-              md: "space-between",
-            },
-          }}
-        >
-          <AppShowcaseText
-            part="DASHBOARD"
-            title="Organize All Your Trips in a Single Application"
-            text="With our intuitive application, you can effortlessly organize all
+
+        <FeaturesText
+          part="DASHBOARD"
+          title="Organize All Your Trips in a Single Application"
+          text="With our intuitive application, you can effortlessly organize all
             your trips in one convenient location. From itinerary details and
             booking confirmations to travel notes and essential documents,
             everything you need for a smooth and stress-free journey is just a
             tap away. Enjoy a clutter-free travel experience and stay in control
             of your adventures with ease."
-          />
-        </Stack>
+        />
       </Stack>
 
       <Stack
         flex={1}
         sx={{
           flexDirection: { xs: "column-reverse", md: "row" },
-          alignItems: "center",
           justifyContent: { md: "space-between" },
-          pb: { xs: 4, md: 9 },
+          alignItems: { xs: "center", md: "center" },
+          pb: { xs: 0, md: 9 },
           width: "100%",
-          borderBottom: `1px solid ${Colors.lightGrey}`,
+          // borderBottom: `1px solid ${Colors.lightGrey}`,
           mt: { xs: 4, md: 8 },
         }}
       >
-        <Stack
-          alignItems="flex-start"
-          justifyContent="center"
-          sx={{ mt: { xs: 3, md: 9 }, width: { xs: "100%", md: "auto" } }}
-        >
-          <AppShowcaseText
-            part="EXPENSES"
-            title="Expense Tracking for Your Travels"
-            text="Keep a Close Watch on Your Travel Costs with our User-Friendly Expense Tracking Solution. Set budget goals, receive real-time updates, and make informed decisions to ensure you get the most out of your travel experiences without any financial surprises. Travel with confidence, knowing that your expenses are well-managed and under control"
-          />
-        </Stack>
+        <FeaturesText
+          part="EXPENSES"
+          title="Expense Tracking for Your Travels"
+          text="Keep a Close Watch on Your Travel Costs with our User-Friendly Expense Tracking Solution. Set budget goals, receive real-time updates, and make informed decisions to ensure you get the most out of your travel experiences without any financial surprises. Travel with confidence, knowing that your expenses are well-managed and under control"
+        />
+
         <Box
           component="img"
           src={md ? DesktopExpenses : MobileExpenses}
@@ -136,6 +122,7 @@ export default function Features({ contentRef }: Props) {
             mr: 0,
             ml: { xs: 0, md: 3 },
             width: "100%",
+            mb: { xs: 3, md: 0 },
           }}
         />
       </Stack>

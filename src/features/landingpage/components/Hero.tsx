@@ -25,20 +25,24 @@ export default function Hero({ handleClick }: Props) {
     <>
       <Stack
         sx={{
-          justifyContent: { xs: "center", md: "space-between" },
-          alignItems: { xs: "flex-end", md: "flex-end" },
+          justifyContent: { xs: "flex-start", md: "flex-start" },
+          alignItems: { xs: "center", md: "flex-start" },
           flexDirection: { xs: "column", md: "row" },
           px: md ? 12.5 : 2,
           pt: { xs: 1, md: 4 },
           width: md ? "100%" : "auto",
-          height: `calc(100vh - ${HEADER_HEIGHT_PX})`,
+          height: { xs: "auto", md: `calc(100vh - ${HEADER_HEIGHT_PX}px)` },
           gap: 3,
         }}
       >
         <Stack sx={{ maxWidth: { xs: "100%", md: "668px" } }}>
           {md && <Plane />}
           {!md && (
-            <Box component="img" src={MobileVan} sx={{ borderRadius: 10 }} />
+            <Box
+              component="img"
+              src={MobileVan}
+              sx={{ borderRadius: { xs: 6, md: 10 } }}
+            />
           )}
           <Typography
             variant="h1"
@@ -49,7 +53,7 @@ export default function Hero({ handleClick }: Props) {
               fontWeight: FontWeights.bold,
               textAlign: { xs: "center", md: "left" },
               mb: 2,
-              mt: { xs: 4, md: 16.25 },
+              mt: { xs: 3, md: 16.25 },
             }}
           >
             Your Ultimate Trip Companion
@@ -57,21 +61,24 @@ export default function Hero({ handleClick }: Props) {
           <Typography
             variant="h6"
             sx={{
+              lineHeight: { xs: "1.875rem", md: "1.875rem" },
               color: (theme) => theme.palette.text.secondary,
               fontWeight: FontWeights.regular,
-              mb: { xs: 10, md: 5 },
+              mb: { xs: 5, md: 5 },
               textAlign: { xs: "center", md: "left" },
             }}
           >
-            Welcome to {APP_NAME} – Your Passport to Seamless Adventures!
+            {`Welcome to ${APP_NAME} – Your Passport to Seamless Adventures!
             Discover, plan, and track your journeys effortlessly with our
-            intuitive web application. Start exploring now!
+            intuitive web application.`}
+            {md && ` Start exploring now!`}
           </Typography>
 
           <Stack
             sx={{
               flexDirection: "row",
               gap: 2,
+              mb: { xs: 1, md: 0 },
             }}
           >
             <PlanTripButton fullWidth />

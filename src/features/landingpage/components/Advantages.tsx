@@ -33,11 +33,11 @@ function Advantages() {
       <Stack
         sx={{
           flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 3, md: 0 },
+          gap: { xs: 3, md: 10 },
         }}
-        justifyContent="space-between"
+        justifyContent="space-evenly"
         textAlign="center"
-        maxWidth="1506px"
+        maxWidth="1720px"
       >
         <AdvantagesCard
           icon={<CameraAltOutlinedIcon />}
@@ -50,6 +50,7 @@ function Advantages() {
           text="Our user-friendly tools help you plan and organize your packing with ease."
         />
         <AdvantagesCard
+          isLongText
           icon={<FolderOpenOutlinedIcon />}
           title="Centralize all your documents"
           text="Simplify Your Life by Bringing Together All Your Essential Documents and Files in a Single, Easily Accessible Location."

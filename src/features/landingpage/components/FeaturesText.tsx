@@ -35,7 +35,8 @@ export default function FeaturesText({ part, title, text }: Props) {
         sx={{
           fontWeight: FontWeights.regular,
           color: (theme) => theme.palette.text.secondary,
-          mb: { xs: 2, md: 4 },
+          mb: { xs: 2, md: 3 },
+          letterSpacing: "0.15px",
         }}
       >
         {text}

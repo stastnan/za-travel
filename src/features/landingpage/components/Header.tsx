@@ -5,7 +5,7 @@ import AppButton from "@features/ui/AppButton";
 import Logo from "@features/ui/logo/Logo";
 import { useBreakpoints } from "@hooks/useBreakpoints";
 
-import { HEADER_HEIGHT_PX } from "../constants";
+import { HEADER_HEIGHT_PX, MOBILE_HEADER_HEIGHT_PX } from "../constants";
 
 function Header() {
   const { md } = useBreakpoints();
@@ -13,15 +13,20 @@ function Header() {
     <Stack
       sx={{
         width: "100%",
-        height: { xs: "auto", md: HEADER_HEIGHT_PX },
+        height: {
+          xs: `${MOBILE_HEADER_HEIGHT_PX}px`,
+          md: `${HEADER_HEIGHT_PX}px`,
+        },
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: "row",
         px: { xs: 2, md: 12.5 },
         py: { xs: 1, md: 0 },
+        mb: { xs: 1, md: 0 },
       }}
     >
       <Logo
+        isSmallIcon={!md}
         isLanding
         sx={{
           justifyContent: "flex-start",
