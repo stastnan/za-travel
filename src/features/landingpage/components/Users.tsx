@@ -66,7 +66,7 @@ export default function Users() {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: { xs: "center", md: "center" },
-            gap: { xs: 0, md: 2 },
+            gap: { xs: 0, md: 7 },
             width: { xs: "100%", md: "90%", lg: "80%" },
             maxHeight: { xs: "50px", md: "auto" },
           }}
