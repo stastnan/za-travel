@@ -33,9 +33,9 @@ export default function Features({ contentRef }: Props) {
   return (
     <Stack
       sx={{
-        mt: { xs: 8.5, md: 9 },
+        mt: { xs: 8.5, md: 9.5 },
         pb: { xs: 6, md: 20.125 },
-        px: { xs: 2, md: 12.5 },
+        px: { xs: 2, md: 8, lg: 12.5 },
       }}
       ref={contentRef}
       alignItems="center"
@@ -80,6 +80,7 @@ export default function Features({ contentRef }: Props) {
             mb: { xs: 3, md: 0 },
             mr: { xs: 0, md: 3 },
             width: "100%",
+            minWidth: { xs: "100%", md: "40%" },
           }}
         />
 
@@ -123,6 +124,7 @@ export default function Features({ contentRef }: Props) {
             ml: { xs: 0, md: 3 },
             width: "100%",
             mb: { xs: 3, md: 0 },
+            minWidth: { xs: "100%", md: "40%" },
           }}
         />
       </Stack>

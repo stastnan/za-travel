@@ -17,7 +17,7 @@ function AdvantagesCard({ icon, title, text, isLongText }: Props) {
     <Stack
       justifyContent="flex-start"
       alignItems="center"
-      sx={{ p: { xs: 3, md: 4 }, width: { xs: "100%", md: "446px" } }}
+      sx={{ p: { xs: 3, md: 4 }, maxWidth: { xs: "100%", md: "446px" } }}
     >
       <IconBox icon={icon} />
 

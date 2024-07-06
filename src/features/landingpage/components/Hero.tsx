@@ -25,17 +25,25 @@ export default function Hero({ handleClick }: Props) {
     <>
       <Stack
         sx={{
-          justifyContent: { xs: "flex-start", md: "flex-start" },
-          alignItems: { xs: "center", md: "flex-start" },
+          justifyContent: { xs: "flex-start", md: "space-between" },
+          alignItems: { xs: "center", lg: "center" },
           flexDirection: { xs: "column", md: "row" },
-          px: md ? 12.5 : 2,
-          pt: { xs: 1, md: 4 },
-          width: md ? "100%" : "auto",
+          px: { xs: 2, md: 8, lg: 12.5 },
+          mt: { xs: 1, md: 4 },
           height: { xs: "auto", md: `calc(100vh - ${HEADER_HEIGHT_PX}px)` },
           gap: 3,
+          pb: { xs: 0, md: 4 },
         }}
       >
-        <Stack sx={{ maxWidth: { xs: "100%", md: "668px" } }}>
+        <Stack
+          sx={{
+            pb: { xs: 0, md: 4 },
+
+            // maxWidth: { xs: "100%", xl: "40%", lg: "60%", md: "70%" },
+            maxWidth: { xs: "100%", md: "70%", lg: "668px" },
+            height: "100%",
+          }}
+        >
           {md && <Plane />}
           {!md && (
             <Box
@@ -90,7 +98,15 @@ export default function Hero({ handleClick }: Props) {
             )}
           </Stack>
 
-          <Users />
+          <Stack
+            sx={{
+              mt: 3,
+              justifyContent: "flex-end",
+              height: "100%",
+            }}
+          >
+            <Users />
+          </Stack>
         </Stack>
 
         {md && (
@@ -100,40 +116,54 @@ export default function Hero({ handleClick }: Props) {
             direction="row"
             sx={{
               justifyContent: "flex-end",
-              alignItems: "flex-end",
+              alignItems: "flex-start",
+              maxWidth: { xs: "100%", md: "28%", xl: "45%", lg: "25%" },
+              maxHeight: { xs: "auto", md: "calc(100vh - 150px)" },
             }}
           >
             <Stack
-              sx={{
-                maxWidth: { xl: "403px", lg: "350px", md: "250px" },
-              }}
               gap={3}
+              sx={{
+                alignItems: { xs: "center", md: "flex-start" },
+              }}
             >
               <Box
                 component="img"
                 src={Van}
                 alt="Camping van"
                 borderRadius={10}
+                width="100%"
               />
               <Box
                 component="img"
                 src={Beach}
                 alt="Palm tree on a beach"
                 borderRadius={10}
+                width="100%"
               />
             </Stack>
 
             {xl && (
-              <Box
-                component="img"
-                src={City}
-                alt="Sunset in Seattle city"
+              <Stack
                 sx={{
+                  alignItems: {
+                    xs: "center",
+                    md: "flex-start",
+                  },
                   maxWidth: "364px",
-                  borderTopRightRadius: "54px",
-                  borderBottomRightRadius: "54px",
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src={City}
+                  alt="Sunset in Seattle city"
+                  sx={{
+                    width: "100%",
+                    borderTopRightRadius: "54px",
+                    borderBottomRightRadius: "54px",
+                  }}
+                />
+              </Stack>
             )}
           </Stack>
         )}

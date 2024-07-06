@@ -33,9 +33,9 @@ function Advantages() {
       <Stack
         sx={{
           flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 3, md: 10 },
+          gap: { xs: 3, md: 6, lg: 10 },
+          justifyContent: "space-between",
         }}
-        justifyContent="space-evenly"
         textAlign="center"
         maxWidth="1720px"
       >
