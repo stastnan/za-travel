@@ -13,7 +13,7 @@ function Advantages() {
     <Stack
       justifyContent="center"
       alignItems="center"
-      sx={{ pb: { xs: 4.125, md: 18 } }}
+      sx={{ pb: { xs: 4.125, md: 18, px: { xs: 2, md: 8, lg: 12.5 } } }}
     >
       <Typography variant="h6" color={(theme) => theme.palette.primary.main}>
         ADVANTAGES

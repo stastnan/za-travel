@@ -39,8 +39,8 @@ export default function Users() {
     <Stack
       direction="row"
       sx={{
-        // mt: { xs: 5, lg: 15, xl: 20 },
-        py: { xs: 2, md: 3 },
+        mt: { xs: 5, md: 0, xl: 5 },
+        py: { xs: 2, md: 1, lg: 3 },
         px: "auto",
         justifyContent: { xs: "flex-start", md: "flex-start" },
         alignItems: { xs: "flex-start", md: "center" },

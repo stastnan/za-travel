@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 
 import { APP_NAME } from "@config/constants";
+import { theme } from "@config/styles";
 import { FontWeights } from "@config/styles/FontWeights";
 import AppButton from "@features/ui/AppButton";
 import { useBreakpoints } from "@hooks/useBreakpoints";
@@ -26,16 +27,13 @@ export default function Hero({ handleClick }: Props) {
       <Stack
         sx={{
           justifyContent: { xs: "flex-start", md: "space-between" },
-          alignItems: { xs: "center", lg: "center", xl: "space-between" },
+          alignItems: { xs: "center", md: "center", xl: "space-between" },
           flexDirection: { xs: "column", md: "row" },
           px: { xs: 2, md: 8, lg: 12.5 },
           mt: { xs: 1, md: 4 },
           maxHeight: {
             xs: "auto",
-            maxHeight: {
-              xs: "auto",
-              md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
-            },
+            md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
           },
           gap: 3,
           pb: { xs: 0, md: 4 },
@@ -43,8 +41,8 @@ export default function Hero({ handleClick }: Props) {
       >
         <Stack
           sx={{
-            pb: { xs: 0, md: 4 },
-            width: { xs: "100%", md: "70%", xl: "47%" },
+            pb: { xs: 0, md: 2, lg: 4 },
+            width: { xs: "100%", md: "70%", lg: "60%", xl: "47%" },
             height: "100%",
           }}
         >
@@ -66,13 +64,17 @@ export default function Hero({ handleClick }: Props) {
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: "2rem", md: "3.75rem" },
+                fontSize: { xs: "2rem", lg: "3.75rem" },
                 lineHeight: { xs: "3rem", md: "4.375rem" },
                 color: (theme) => theme.palette.text.primary,
                 fontWeight: FontWeights.bold,
                 textAlign: { xs: "center", md: "left" },
                 mb: 2,
-                mt: { xs: 3, md: 16.25 },
+                mt: { xs: 3, md: 4, lg: 3, xl: 16.25 },
+                [theme.breakpoints.down("lg")]: {
+                  fontSize: "2.5rem",
+                  lineHeight: "2.3rem",
+                },
               }}
             >
               Your Ultimate Trip Companion
@@ -125,9 +127,10 @@ export default function Hero({ handleClick }: Props) {
             gap={3}
             direction="row"
             sx={{
+              aspectRatio: 1 / 1,
               justifyContent: "flex-end",
               alignItems: "flex-start",
-              maxWidth: { xs: "100%", md: "28%", xl: "46%", lg: "25%" },
+              maxWidth: { xs: "100%", md: "28%", xl: "40%", lg: "25%" },
               maxHeight: {
                 xs: "auto",
                 md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
@@ -137,8 +140,7 @@ export default function Hero({ handleClick }: Props) {
             <Stack
               gap={3}
               sx={{
-                alignItems: { xs: "center", md: "flex-start" },
-                height: "100%",
+                alignItems: { xs: "center", md: "flex-end" },
               }}
             >
               <Box
@@ -146,14 +148,20 @@ export default function Hero({ handleClick }: Props) {
                 src={Van}
                 alt="Camping van"
                 borderRadius={10}
-                sx={{ width: "100%" }}
+                sx={{
+                  maxWidth: { md: "90%", xl: "100%" },
+                  aspectRatio: 1 / 1,
+                }}
               />
               <Box
                 component="img"
                 src={Beach}
                 alt="Palm tree on a beach"
                 borderRadius={10}
-                sx={{ width: "100%" }}
+                sx={{
+                  maxWidth: { md: "90%", xl: "100%" },
+                  aspectRatio: 1 / 1,
+                }}
               />
             </Stack>
 
@@ -164,7 +172,8 @@ export default function Hero({ handleClick }: Props) {
                     xs: "center",
                     md: "flex-start",
                   },
-                  maxWidth: "364px",
+                  // maxWidth: "343px",
+                  // maxHeight: "791px",
                 }}
               >
                 <Box
@@ -172,6 +181,7 @@ export default function Hero({ handleClick }: Props) {
                   src={City}
                   alt="Sunset in Seattle city"
                   sx={{
+                    aspectRatio: 1 / 2.27,
                     width: "100%",
                     height: "100%",
                     borderTopRightRadius: "54px",
