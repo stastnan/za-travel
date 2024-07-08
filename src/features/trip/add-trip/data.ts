@@ -18,7 +18,6 @@ export const WIZARD_STEPS: WizardSteps[] = [
 
     description:
       "Add where are you going to. You can add maximum 5 destinations.",
-    Component: TravelInfo,
 
     description: `Add where are you going to. You can add maximum ${MAX_TRIP_DESTINATIONS} destinations.`,
     Component: Destinations,
