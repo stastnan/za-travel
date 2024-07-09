@@ -65,7 +65,7 @@ function Header() {
               height: "3rem",
               minWidth: "5.88rem",
               textAlign: "center",
-              py: 2,
+              py: { xs: 2, md: 1, lg: 2 },
               px: 1,
             }}
           >

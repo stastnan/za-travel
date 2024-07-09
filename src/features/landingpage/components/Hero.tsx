@@ -30,13 +30,13 @@ export default function Hero({ handleClick }: Props) {
           alignItems: { xs: "center", md: "center", xl: "space-between" },
           flexDirection: { xs: "column", md: "row" },
           px: { xs: 2, md: 8, lg: 12.5 },
-          mt: { xs: 1, md: 4 },
-          maxHeight: {
+          mt: { xs: 1, md: 2, lg: 4 },
+          height: {
             xs: "auto",
             md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
           },
           gap: 3,
-          pb: { xs: 0, md: 4 },
+          pb: { xs: 0, md: 2, lg: 4 },
         }}
       >
         <Stack
@@ -64,17 +64,23 @@ export default function Hero({ handleClick }: Props) {
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: "2rem", lg: "3.75rem" },
-                lineHeight: { xs: "3rem", md: "4.375rem" },
+                fontSize: {
+                  xs: "2rem",
+                  md: "2rem",
+                  lg: "2.5rem",
+                  xl: "3.75rem",
+                },
+                lineHeight: {
+                  xs: "3rem",
+                  md: "2rem",
+                  lg: "2.3rem",
+                  xl: "4.375rem",
+                },
                 color: (theme) => theme.palette.text.primary,
                 fontWeight: FontWeights.bold,
                 textAlign: { xs: "center", md: "left" },
                 mb: 2,
-                mt: { xs: 3, md: 4, lg: 3, xl: 16.25 },
-                [theme.breakpoints.down("lg")]: {
-                  fontSize: "2.5rem",
-                  lineHeight: "2.3rem",
-                },
+                mt: { xs: 3, md: 2, lg: 3, xl: 16.25 },
               }}
             >
               Your Ultimate Trip Companion
@@ -82,10 +88,18 @@ export default function Hero({ handleClick }: Props) {
             <Typography
               variant="h6"
               sx={{
-                lineHeight: { xs: "1.875rem", md: "1.875rem" },
+                lineHeight: { xs: "1.875rem", xl: "1.875rem" },
+                [theme.breakpoints.down("xl")]: {
+                  fontSize: "1rem",
+                  lineHeight: "1.2rem",
+                },
+                [theme.breakpoints.down("lg")]: {
+                  fontSize: "0.9rem",
+                  lineHeight: "1.2rem",
+                },
                 color: (theme) => theme.palette.text.secondary,
                 fontWeight: FontWeights.regular,
-                mb: { xs: 5, md: 5 },
+                mb: { xs: 5, md: 1, lg: 5 },
                 textAlign: { xs: "center", md: "left" },
               }}
             >
@@ -101,22 +115,26 @@ export default function Hero({ handleClick }: Props) {
                 mb: { xs: 1, md: 0 },
               }}
             >
-              <PlanTripButton fullWidth />
+              <PlanTripButton fullWidth isHero />
 
               {md && (
-                <AppButton variant="outlined" fullWidth onClick={handleClick}>
+                <AppButton
+                  variant="outlined"
+                  fullWidth
+                  onClick={handleClick}
+                  sx={{
+                    height: {
+                      xs: "3.5rem",
+                      md: "32px",
+                      lg: "56px",
+                    },
+                  }}
+                >
                   Learn more
                 </AppButton>
               )}
             </Stack>
 
-            <Stack
-              sx={{
-                mt: 3,
-                justifyContent: { xl: "flex-end" },
-                height: "100%",
-              }}
-            ></Stack>
             <Users />
           </Stack>
         </Stack>
@@ -130,7 +148,7 @@ export default function Hero({ handleClick }: Props) {
               aspectRatio: 1 / 1,
               justifyContent: "flex-end",
               alignItems: "flex-start",
-              maxWidth: { xs: "100%", md: "28%", xl: "40%", lg: "25%" },
+              maxWidth: { xs: "100%", md: "24%", xl: "40%", lg: "25%" },
               maxHeight: {
                 xs: "auto",
                 md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
@@ -141,6 +159,7 @@ export default function Hero({ handleClick }: Props) {
               gap={3}
               sx={{
                 alignItems: { xs: "center", md: "flex-end" },
+                minWidth: 0,
               }}
             >
               <Box
@@ -149,8 +168,9 @@ export default function Hero({ handleClick }: Props) {
                 alt="Camping van"
                 borderRadius={10}
                 sx={{
-                  maxWidth: { md: "90%", xl: "100%" },
+                  maxWidth: { md: "80%", xl: "100%" },
                   aspectRatio: 1 / 1,
+                  minWidth: 0,
                 }}
               />
               <Box
@@ -159,8 +179,10 @@ export default function Hero({ handleClick }: Props) {
                 alt="Palm tree on a beach"
                 borderRadius={10}
                 sx={{
-                  maxWidth: { md: "90%", xl: "100%" },
+                  maxWidth: { md: "80%", xl: "100%" },
+                  maxHeight: { xs: "auto", md: "5%", lg: "auto" },
                   aspectRatio: 1 / 1,
+                  minWidth: 0,
                 }}
               />
             </Stack>

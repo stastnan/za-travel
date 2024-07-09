@@ -22,8 +22,8 @@ function Avatar({ src, sx, alt }: AvatarProps) {
       src={src}
       alt={alt}
       sx={{
-        maxWidth: { xs: "52px", md: "55px" },
-        height: { xs: "50px", md: "55px" },
+        maxWidth: { xs: "52px", md: "45px", lg: "55px" },
+        height: { xs: "50px", md: "45px", lg: "55px" },
         borderRadius: "50%",
         border: `1px solid ${Colors.white}`,
         position: "absolute",
@@ -40,14 +40,14 @@ export default function Users() {
       direction="row"
       sx={{
         mt: { xs: 5, md: 0, xl: 5 },
-        py: { xs: 2, md: 1, lg: 3 },
+        py: { xs: 2, md: 0.5, lg: 2, xl: 3 },
         px: "auto",
         justifyContent: { xs: "flex-start", md: "flex-start" },
         alignItems: { xs: "flex-start", md: "center" },
         borderTop: `1px solid ${Colors.lightGrey}`,
         borderBottom: `1px solid ${Colors.lightGrey}`,
         gap: { xs: 10, md: 2 },
-        width: { xs: "100%", md: "auto" },
+        maxWidth: { xs: "100%", md: "auto" },
         maxHeight: { xs: "106px", md: "auto" },
       }}
     >
@@ -56,9 +56,10 @@ export default function Users() {
           flexDirection: { xs: "column", md: "row" },
           justifyContent: { xs: "space-between", md: "flex-start" },
           alignItems: { xs: "space-between", md: "" },
-          width: { xs: "100%", md: "auto" },
+          maxWidth: { xs: "100%", md: "auto" },
           gap: { xs: 0, md: 2 },
-          px: { xs: 0, sm: 15, md: 0 },
+          // px: { xs: 0, sm: 15, md: 0 },
+          width: "100%",
         }}
       >
         <Stack
@@ -79,7 +80,7 @@ export default function Users() {
             sx={{
               position: "relative",
               width: "10.5rem",
-
+              justifyContent: "center",
               height: "3.44rem",
             }}
           >

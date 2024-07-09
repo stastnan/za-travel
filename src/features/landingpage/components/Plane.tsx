@@ -2,8 +2,20 @@ import { Box } from "@mui/material";
 
 export function Plane() {
   return (
-    <Box sx={{ ml: "-6.75rem" }} maxWidth="761px" maxHeight="160px">
-      <svg viewBox="0 0 754 162" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Box
+      sx={{
+        ml: "-6.75rem",
+        maxWidth: { xl: "761px", lg: "100%", md: "70%" },
+        maxHeight: { xl: "160px", lg: "20%", md: "10%" },
+      }}
+    >
+      <svg
+        viewBox="0 0 754 162"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+      >
         <path
           d="M652 160C652 160 391.689 155.515 342.301 110.262C236.786 13.5772 418.451 96.4 274.399 103.331C130.347 110.262 -25.0138 1 -6.4909 1"
           stroke="#729E65"
