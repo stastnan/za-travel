@@ -33,6 +33,10 @@ export default function Hero({ handleClick }: Props) {
           minHeight: {
             xs: "auto",
             md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
+            lg: "",
+          },
+          maxHeight: {
+            lg: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
           },
           gap: 3,
           pb: { xs: 0, md: 2, lg: 4 },
