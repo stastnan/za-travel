@@ -80,6 +80,7 @@ export default function Features({ contentRef }: Props) {
             mr: { xs: 0, md: 3 },
             width: "100%",
             minWidth: { xs: "100%", md: "40%" },
+            maxWidth: { md: "50%" },
           }}
         />
 

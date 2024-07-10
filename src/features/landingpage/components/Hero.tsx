@@ -29,14 +29,14 @@ export default function Hero({ handleClick }: Props) {
           justifyContent: { xs: "flex-start", md: "space-between" },
           alignItems: { xs: "center", md: "center", xl: "space-between" },
           flexDirection: { xs: "column", md: "row" },
-          mt: { xs: 1, md: 2, lg: 4 },
+          mt: { xs: 1 },
           minHeight: {
             xs: "auto",
             md: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
-            lg: "",
+            lg: "100%",
           },
           maxHeight: {
-            lg: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
+            xl: `calc(100vh - ${HEADER_HEIGHT_PX}px - ${HERO_MARGIN_TOP_PX}px)`,
           },
           gap: 3,
           pb: { xs: 0, md: 2, lg: 4 },
@@ -55,7 +55,7 @@ export default function Hero({ handleClick }: Props) {
               height: "100%",
               justifyContent: { md: "center", lg: "space-between" },
               width: "100%",
-              gap: { md: 3, lg: 5 },
+              gap: { md: 3, lg: 4 },
             }}
           >
             {lg && <Plane />}
