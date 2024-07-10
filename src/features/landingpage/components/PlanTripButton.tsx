@@ -7,10 +7,9 @@ import AppButton from "@features/ui/AppButton";
 interface Props {
   fullWidth?: boolean;
   sx?: SxProps<Theme>;
-  isHero?: boolean;
 }
 
-function PlanTripButton({ fullWidth, sx, isHero }: Props) {
+function PlanTripButton({ fullWidth, sx }: Props) {
   return (
     <AppButton
       isLanding
@@ -20,7 +19,7 @@ function PlanTripButton({ fullWidth, sx, isHero }: Props) {
       fullWidth={fullWidth}
       sx={{
         ...sx,
-        height: { xs: "3.5rem", md: isHero ? "32px" : "56px", lg: "56px" },
+        height: { xs: "3.5rem", md: "56px", lg: "56px" },
       }}
       href={AppRoutes.signUp}
     >

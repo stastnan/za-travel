@@ -20,7 +20,7 @@ function Header() {
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: "row",
-
+        px: { xs: 2, md: 8, lg: 12.5 },
         py: { xs: 1, md: 0 },
         mb: { xs: 1, md: 0 },
       }}

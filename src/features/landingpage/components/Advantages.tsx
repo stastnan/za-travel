@@ -37,7 +37,6 @@ function Advantages() {
           justifyContent: "space-between",
         }}
         textAlign="center"
-        // maxWidth="1720px"
       >
         <AdvantagesCard
           icon={<CameraAltOutlinedIcon />}

@@ -29,7 +29,7 @@ interface Props {
 }
 
 export default function Features({ contentRef }: Props) {
-  const { md } = useBreakpoints();
+  const { sm } = useBreakpoints();
   return (
     <Stack
       sx={{
@@ -72,7 +72,7 @@ export default function Features({ contentRef }: Props) {
       >
         <Box
           component="img"
-          src={md ? DesktopDashboard : MobileDashboard}
+          src={sm ? DesktopDashboard : MobileDashboard}
           alt="App's trip planning screen"
           sx={{
             ...imgStyles,
@@ -103,7 +103,6 @@ export default function Features({ contentRef }: Props) {
           alignItems: { xs: "center", md: "center" },
           pb: { xs: 0, md: 9 },
           width: "100%",
-          // borderBottom: `1px solid ${Colors.lightGrey}`,
           mt: { xs: 4, md: 8 },
         }}
       >
@@ -115,7 +114,7 @@ export default function Features({ contentRef }: Props) {
 
         <Box
           component="img"
-          src={md ? DesktopExpenses : MobileExpenses}
+          src={sm ? DesktopExpenses : MobileExpenses}
           alt="App's expenses screen"
           sx={{
             ...imgStyles,
