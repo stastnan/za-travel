@@ -12,9 +12,10 @@ import PlanNextTrip from "@features/landingpage/components/PlanNextTrip";
 
 interface Props {
   children: React.ReactNode;
+  noPadding?: boolean;
 }
 
-const Section = ({ children }: Props) => {
+const Section = ({ children, noPadding }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -25,6 +26,7 @@ const Section = ({ children }: Props) => {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : ""}
       transition={{ duration: 0.7 }}
+      sx={{ px: noPadding ? 0 : { xs: 2, md: 8, lg: 12.5 } }}
     >
       {children}
     </Box>
@@ -58,7 +60,7 @@ export default function LandingPage() {
           <Advantages />
         </Section>
       </Box>
-      <Section>
+      <Section noPadding>
         <PlanNextTrip />
       </Section>
       <Section>

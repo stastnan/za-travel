@@ -5,8 +5,8 @@ export function Plane() {
     <Box
       sx={{
         ml: "-6.75rem",
-        maxWidth: { xl: "761px", lg: "100%", md: "70%" },
-        maxHeight: { xl: "160px", lg: "20%", md: "10%" },
+        maxWidth: { xl: "761px", lg: "100%" },
+        maxHeight: { xl: "160px", lg: "20%" },
       }}
     >
       <svg

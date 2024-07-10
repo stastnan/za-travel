@@ -58,7 +58,6 @@ export default function Users() {
           alignItems: { xs: "space-between", md: "" },
           maxWidth: { xs: "100%", md: "auto" },
           gap: { xs: 0, md: 2 },
-          // px: { xs: 0, sm: 15, md: 0 },
           width: "100%",
         }}
       >

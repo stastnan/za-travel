@@ -15,6 +15,7 @@ interface Props {
 function AdvantagesCard({ icon, title, text, isLongText }: Props) {
   return (
     <Stack
+      flex={1}
       justifyContent="flex-start"
       alignItems="center"
       sx={{ p: { xs: 3, md: 4 }, maxWidth: { xs: "100%", md: "446px" } }}

@@ -13,7 +13,7 @@ function Advantages() {
     <Stack
       justifyContent="center"
       alignItems="center"
-      sx={{ pb: { xs: 4.125, md: 18, px: { xs: 2, md: 8, lg: 12.5 } } }}
+      sx={{ pb: { xs: 4.125, md: 18 } }}
     >
       <Typography variant="h6" color={(theme) => theme.palette.primary.main}>
         ADVANTAGES
@@ -33,11 +33,11 @@ function Advantages() {
       <Stack
         sx={{
           flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 3, md: 6, lg: 10 },
+          gap: { xs: 3, lg: 4, xl: 10 },
           justifyContent: "space-between",
         }}
         textAlign="center"
-        maxWidth="1720px"
+        // maxWidth="1720px"
       >
         <AdvantagesCard
           icon={<CameraAltOutlinedIcon />}

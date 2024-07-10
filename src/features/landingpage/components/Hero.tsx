@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function Hero({ handleClick }: Props) {
-  const { md, xl } = useBreakpoints();
+  const { md, lg, xl } = useBreakpoints();
 
   return (
     <>
@@ -29,7 +29,6 @@ export default function Hero({ handleClick }: Props) {
           justifyContent: { xs: "flex-start", md: "space-between" },
           alignItems: { xs: "center", md: "center", xl: "space-between" },
           flexDirection: { xs: "column", md: "row" },
-          px: { xs: 2, md: 8, lg: 12.5 },
           mt: { xs: 1, md: 2, lg: 4 },
           height: {
             xs: "auto",
@@ -53,7 +52,7 @@ export default function Hero({ handleClick }: Props) {
               width: "100%",
             }}
           >
-            {md && <Plane />}
+            {lg && <Plane />}
             {!md && (
               <Box
                 component="img"
@@ -99,7 +98,7 @@ export default function Hero({ handleClick }: Props) {
                 },
                 color: (theme) => theme.palette.text.secondary,
                 fontWeight: FontWeights.regular,
-                mb: { xs: 5, md: 1, lg: 5 },
+                mb: { xs: 5, md: 3, lg: 5 },
                 textAlign: { xs: "center", md: "left" },
               }}
             >
@@ -112,7 +111,7 @@ export default function Hero({ handleClick }: Props) {
               sx={{
                 flexDirection: "row",
                 gap: 2,
-                mb: { xs: 1, md: 0 },
+                mb: { xs: 1, md: 3, lg: 0 },
               }}
             >
               <PlanTripButton fullWidth isHero />

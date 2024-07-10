@@ -35,7 +35,6 @@ export default function Features({ contentRef }: Props) {
       sx={{
         mt: { xs: 8.5, md: 9.5 },
         pb: { xs: 6, md: 20.125 },
-        px: { xs: 2, md: 8, lg: 12.5 },
       }}
       ref={contentRef}
       alignItems="center"
