@@ -16,7 +16,7 @@ ZaTravel offers a comprehensive solution for travel enthusiasts by combining pow
 
 - **[Visit Happy Music Player](https://za-travel.web.app/login)**
   - log in with e-mail: visitor@example.com and password: ILoveTrips!
-- **[Watch project's video presentation]()**
+- **[Watch project's video presentation](https://www.loom.com/share/5ebb3db4e2724cbf947c154d51952a14?sid=7edb2ff8-fb69-46da-9481-83b9298306fe)**
 
 ## Repository Structure
 
