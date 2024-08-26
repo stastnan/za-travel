@@ -1,6 +1,7 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
+
 import {
   Box,
   ButtonBase,
@@ -55,6 +56,7 @@ export default function TravelInfo() {
       gap={3}
     >
       <Stack direction={{ xs: "column", md: "row" }} gap={3}>
+
         <Stack>
           <ButtonBase
             onClick={open}
@@ -104,6 +106,7 @@ export default function TravelInfo() {
             })}
           />
         </Stack>
+
         <Stack sx={{ width: "100%" }} gap={3}>
           <Controller
             name="name"
@@ -127,6 +130,7 @@ export default function TravelInfo() {
             )}
           />
           <Stack direction="row" gap={2}>
+
             <DateSelectInput
               control={control}
               name="startDate"
@@ -140,6 +144,7 @@ export default function TravelInfo() {
               requiredErrorText="Please specify your end date"
               label="End date"
               minDate={formValues.startDate}
+
             />
           </Stack>
         </Stack>
@@ -167,15 +172,18 @@ export default function TravelInfo() {
           />
         )}
       />
+
       <PreviewImageDialog
         isOpen={isOpen}
         onClose={close}
         onSave={onPreviewImageSave}
       />
+
       <Pagination />
     </Stack>
   );
 }
+
 
 function useTravelInfoForm({
   closePreviewImageDialog,
@@ -219,6 +227,7 @@ function useTravelInfoForm({
   const onSubmit: SubmitHandler<FormInput> = (data) => {
     dispatch(nextStep());
     dispatch(setTravelInformation(data));
+
   };
 
   return {
