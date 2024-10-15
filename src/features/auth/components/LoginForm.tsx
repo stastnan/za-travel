@@ -40,6 +40,7 @@ export default function LoginForm() {
         rules={{ required: "Please specify your email address" }}
         render={({ field, fieldState }) => (
           <TextField
+            data-test="@input:email"
             variant="standard"
             margin="normal"
             required
@@ -61,6 +62,7 @@ export default function LoginForm() {
         rules={{ required: "Please specify your password" }}
         render={({ field, fieldState }) => (
           <TextField
+            data-test="@input:password"
             variant="standard"
             margin="normal"
             required

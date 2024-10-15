@@ -39,6 +39,7 @@ export default function SignUpForm() {
         rules={{ required: "Please fill your name" }}
         render={({ field, fieldState }) => (
           <TextField
+            data-test="@input:name"
             variant="standard"
             margin="normal"
             required
@@ -60,6 +61,7 @@ export default function SignUpForm() {
         rules={{ required: "Please specify your email address" }}
         render={({ field, fieldState }) => (
           <TextField
+            data-test="@input:email"
             variant="standard"
             margin="normal"
             required
@@ -80,6 +82,7 @@ export default function SignUpForm() {
         rules={{ required: "Please specify your password!" }}
         render={({ field, fieldState }) => (
           <TextField
+            data-test="@input:password"
             variant="standard"
             margin="normal"
             required
@@ -107,6 +110,7 @@ export default function SignUpForm() {
         }}
         render={({ field, fieldState }) => (
           <TextField
+            data-test="@input:password-repeat"
             variant="standard"
             margin="normal"
             required
