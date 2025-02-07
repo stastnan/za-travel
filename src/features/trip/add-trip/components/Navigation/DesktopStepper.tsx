@@ -11,11 +11,12 @@ interface Props {
 
 export default function DesktopStepper({ currentStep, steps }: Props) {
   const { xl } = useBreakpoints();
+
   return (
     <Stepper
       activeStep={currentStep}
       alternativeLabel={!xl}
-      sx={{ mb: 8, display: { xs: "none", lg: "flex" }, ml: -1 }}
+      sx={{ display: { xs: "none", lg: "flex" }, mb: 8, ml: -1 }}
     >
       {steps.map(({ title }) => (
         <Step key={title}>
