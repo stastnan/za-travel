@@ -24,8 +24,8 @@ interface Props {
   primaryButtonText: string;
   onPrimaryButtonClick: () => void;
   children: React.ReactNode;
-  isForm: boolean;
-  maxWidth: number;
+  isForm?: boolean;
+  maxWidth?: number;
 }
 
 export default function AppDialog({
